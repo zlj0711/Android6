@@ -10,6 +10,7 @@ import java.util.Date;
 public class Note {
 
     public final long id;
+    private int level;
     private Date date;
     private State state;
     private String content;
@@ -41,4 +42,8 @@ public class Note {
     public void setContent(String content) {
         this.content = content;
     }
+
+    public int getLevel() {return  level;}
+
+    public void setLevel(int level) {this.level = level;}
 }

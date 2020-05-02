@@ -15,12 +15,38 @@
         android:gravity="start|top"
         android:padding="4dp"
         android:textColor="#1e1e1e" />
+    <RadioGroup
+        android:id="@+id/choice"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="vertical">
 
+        <RadioButton
+            android:id="@+id/highBtn"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="High" />
+
+        <RadioButton
+            android:id="@+id/normalBtn"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Normal" />
+
+        <RadioButton
+            android:id="@+id/lowBtn"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Low" />
+
+    </RadioGroup>
     <Button
         android:id="@+id/btn_add"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
         android:text="@string/confirm" />
+
+
 
 </LinearLayout>

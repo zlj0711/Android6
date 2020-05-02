@@ -4,9 +4,11 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.byted.camp.todolist.NoteOperator;
@@ -26,13 +28,14 @@ public class NoteViewHolder extends RecyclerView.ViewHolder {
 
     private static final SimpleDateFormat SIMPLE_DATE_FORMAT =
             new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss", Locale.ENGLISH);
-
+    private static final String TAG = "zlj";
     private final NoteOperator operator;
 
     private CheckBox checkBox;
     private TextView contentText;
     private TextView dateText;
     private View deleteBtn;
+    private RadioGroup myGroup;
 
     public NoteViewHolder(@NonNull View itemView, NoteOperator operator) {
         super(itemView);
@@ -42,6 +45,7 @@ public class NoteViewHolder extends RecyclerView.ViewHolder {
         contentText = itemView.findViewById(R.id.text_content);
         dateText = itemView.findViewById(R.id.text_date);
         deleteBtn = itemView.findViewById(R.id.btn_delete);
+        myGroup = itemView.findViewById(R.id.choice);
     }
 
     public void bind(final Note note) {
@@ -70,6 +74,19 @@ public class NoteViewHolder extends RecyclerView.ViewHolder {
         } else {
             contentText.setTextColor(Color.BLACK);
             contentText.setPaintFlags(contentText.getPaintFlags() & ~Paint.STRIKE_THRU_TEXT_FLAG);
+        }
+        switch (note.getLevel()){
+            case 0:
+                itemView.setBackgroundColor(Color.RED);
+                break;
+            case 1:
+                itemView.setBackgroundColor(Color.GREEN);
+                break;
+            case 2:
+                break;
+            default:
+                Log.d(TAG,"error");
+                break;
         }
     }
 }

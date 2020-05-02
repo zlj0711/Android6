@@ -30,6 +30,6 @@ public class FeedReaderContract {
 
         public static final String COLUMN_NAME_SUBTITLE = "subtitle";
 
-        public static final String COLUMN_NAME_CONTENT = "content";
+//        public static final String COLUMN_NAME_CONTENT = "content";
     }
 }
